@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Nhập a và b . in ra các số chính phương từ a đến b</h4>
+<script>
+    // chính phương là căn của nó là sô nguyên
+    // 5 - 40 ---- 9 16 25 36
+    //  Math.floor() làm tròn xuống
+    let str = '';
+    let a = +prompt("enter a");
+    let b = +prompt("enter b");
+    for (let i = a; i <= b; i++) {
+        if (Math.sqrt(i) % 1 === 0) {
+            str += i + ' ';
+        }
+    }
+    document.write(str);
+
+
+    // cách 2: để tối ưu đoạn code
+    // không chạy từ a đến b mà chỉ chạy chính phương a đến chính phương b thôi
+
+    let str2 = '';
+    a = Math.ceil(Math.sqrt(a)); // 1.41 --- 2
+    b = Math.floor(Math.sqrt(b)); // 9,99,---- 9
+    for (let i = a; i <= b; i++) {
+        str2 += i * i + ' ';
+    }
+    document.write(str2);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>công việc rán bánh đa nem, vì chảo rán nhà Duy chỉ rán được từ 1-9 chiếc bánh đa nem một lúc.
+    với N chiếc bánh đa nem thì Duy phải ngồi rán ít nhất bao nhiêu lần.</p>
+<input type="text" placeholder="số bánh cần rán" id="n">
+<button onclick="tinh()">Tính</button>
+<p id="kq"></p>
+<script>
+    function tinh() {
+        let n = document.getElementById('n').value;
+        let a = Math.ceil(n / 9); // làm tròn lên 1,6 --- 2
+        document.getElementById('kq').innerHTML = 'số lần rán tối thiểu là: ' + a;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT bánh chưng</title>
+</head>
+<body>
+<h4>Mỗi chiếc bánh chưng được chia cho tối đa là 4 người ăn.
+    Các sinh viên được chia ra làm nhiều nhóm nhỏ. mỗi nhóm có không quá 4 thành viên.
+    tính số bánh chưng tối thiểu cần thiết để chia đủ cho tất cả mọi người đều được ăn.</h4>
+<input type="number" placeholder="số nhóm được chia" id="n">
+<button onclick="getAdd()">Nhập số người mỗi nhóm</button>
+<button onclick="tinh()">Tính</button>
+<p id="pt"></p>
+<p id="kq"></p>
+<script>
+    let arrNum = [];
+
+    function getAdd() {
+        let n = document.getElementById('n').value;
+        for (let i = 0; i < n; i++) {
+            let pt = +prompt('nhập số người nhóm thứ ' + i);
+            if (pt <= 4) {
+                arrNum.push(pt);
+            }
+        }
+        document.getElementById('pt').innerHTML = 'Các nhóm là: ' + arrNum;
+    }
+    function tinh(){
+        let tong = 0;
+        let banh = 0;
+        for (let i = 0; i < arrNum.length; i++) {
+         tong += arrNum[i];
+         banh = Math.ceil(tong/4);
+        }
+        document.getElementById('kq').innerHTML = 'Số bánh tối thiểu cần có để chia cho mỗi người là: '+banh;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Ghép đôi 1 nam 1 nữ trong 1 lớp học. có số nam nữ chênh lệch nhau. Tính số cặp có thể ghép nam nữ và đồng giới</h4>
+<script>
+    let nam = +prompt('nam');
+    let nu = +prompt('nu');
+    let namnu = 0;
+    let donggioi = 0;
+    if(nam<=nu){
+        namnu = nam;
+        donggioi = Math.floor((nu - nam)/2)
+    } else {
+        namnu = nu;
+        donggioi = Math.floor((nam - nu)/2)
+    }
+    document.write(namnu + ' cặp nam nữ'+'<br>');
+    document.write(donggioi + ' cặp đồng giới');
+
+    // cách 2
+    // tính cặp đồng giới ngay từ đầu
+    //let donggioi =  Math.floor( Math.abs(a-b)/2);
+
+</script>
+</body>
+</html>
